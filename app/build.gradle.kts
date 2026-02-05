@@ -36,7 +36,7 @@ android {
 // 放在 android { ... } 块的后面
 androidComponents {
     onVariants { variant ->
-        val name = "Eulcauink"
+        val name = "EulCauInk"
         val vName = android.defaultConfig.versionName ?: "dev"
 
         variant.outputs.forEach { output ->
