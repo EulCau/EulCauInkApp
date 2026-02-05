@@ -61,14 +61,14 @@ EulCauInk 是一款以 **Markdown（`.md`）** 为核心的本地笔记应用，
 
 Web 前端完整源码位于：
 
-**GitHub**  
-[EulCau/EulcauInk](https://github.com/EulCau/EulcauInk)
+**GitHub 仓库** [EulCau/EulcauInk](https://github.com/EulCau/EulcauInk)
 
 该仓库包含：
 
 - 前端源码
 - Vite 构建配置
 - Markdown 编辑与渲染逻辑
+- 静态网页构建方法与封装说明
 
 ## 已知限制与注意事项
 
