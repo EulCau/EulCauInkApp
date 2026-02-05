@@ -33,6 +33,20 @@ android {
     }
 }
 
+// 放在 android { ... } 块的后面
+androidComponents {
+    onVariants { variant ->
+        val name = "Eulcauink"
+        val vName = android.defaultConfig.versionName ?: "dev"
+
+        variant.outputs.forEach { output ->
+            // 在新版 AGP 中，outputFileName 需要通过这种方式访问
+            val mainOutput = output as? com.android.build.api.variant.impl.VariantOutputImpl
+            mainOutput?.outputFileName?.set("${name}_v${vName}_${variant.name}.apk")
+        }
+    }
+}
+
 dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
