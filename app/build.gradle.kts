@@ -55,6 +55,6 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-    implementation("androidx.webkit:webkit:1.9.0")
-    implementation("com.google.code.gson:gson:2.11.0")
+    implementation(libs.androidx.webkit.v190)
+    implementation(libs.gson)
 }
