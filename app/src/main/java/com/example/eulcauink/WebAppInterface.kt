@@ -9,8 +9,9 @@ import androidx.core.net.toUri
 import com.google.gson.Gson
 import java.io.File
 
+class WebAppInterface(private val activity: MainActivity) {
 
-class WebAppInterface(private val context: Context) {
+    private val context: Context = activity
 
     private val notesDir: File = File(context.filesDir, "notes").apply {
         if (!exists()) mkdirs()
@@ -20,20 +21,38 @@ class WebAppInterface(private val context: Context) {
         if (!exists()) mkdirs()
     }
 
-    // ===== Images =====
+    // ===== NEW: System Integration =====
+
+    @JavascriptInterface
+    fun triggerPickImage() {
+        activity.launchPickImage()
+    }
+
+    @JavascriptInterface
+    fun triggerImportMarkdown() {
+        activity.launchImportMarkdown()
+    }
+
+    @JavascriptInterface
+    fun triggerExportMarkdown(filename: String, content: String) {
+        activity.launchExportMarkdown(content, filename)
+    }
+
+    // ===== Existing Logic =====
 
     @JavascriptInterface
     fun saveImage(base64Data: String, filename: String): String {
-        val cleanBase64 = base64Data.substringAfter(",")
-        val bytes = Base64.decode(cleanBase64, Base64.DEFAULT)
-
-        val file = File(imagesDir, filename)
-        file.writeBytes(bytes)
-
-        return filename
+        try {
+            val cleanBase64 = base64Data.substringAfter(",")
+            val bytes = Base64.decode(cleanBase64, Base64.DEFAULT)
+            val file = File(imagesDir, filename)
+            file.writeBytes(bytes)
+            return filename
+        } catch (e: Exception) {
+            e.printStackTrace()
+            return ""
+        }
     }
-
-    // ===== Notes =====
 
     @JavascriptInterface
     fun saveNote(filename: String, content: String) {
@@ -58,16 +77,13 @@ class WebAppInterface(private val context: Context) {
                     "updatedAt" to it.lastModified()
                 )
             } ?: emptyList()
-
         return Gson().toJson(list)
     }
 
     @JavascriptInterface
     fun deleteNote(filename: String): Boolean {
         val file = File(notesDir, filename)
-        if (file.exists()) {
-            return file.delete()
-        }
+        if (file.exists()) return file.delete()
         return false
     }
 
@@ -75,8 +91,6 @@ class WebAppInterface(private val context: Context) {
     fun showToast(msg: String) {
         Toast.makeText(context, msg, Toast.LENGTH_SHORT).show()
     }
-
-    // --- System Actions ---
 
     @JavascriptInterface
     fun openExternalLink(url: String) {
