@@ -33,13 +33,14 @@ EulCauInk 是一款以 **Markdown（`.md`）** 为核心的本地笔记应用，
 在 Markdown 文档中，你可以：
 
 - 正常书写 Markdown 语法
-- **绘图 / 插入图片**
-- **插入超链接**
+- 上传 / 下载 Markdown 文件
+- 绘图 / 插入图片
+- 插入超链接
 
 #### 支持的链接类型
 
 | 链接类型 | 是否支持 | 说明 |
-|------|------|------|
+| ------ | ------ | ------ |
 | `http://` / `https://` | ✅ | 外部网页链接 |
 | `#标题` | ✅ | 当前文档内部标题跳转 |
 | `xxx.md` | ✅ | 跳转到其他 Markdown 文档 |
@@ -61,7 +62,9 @@ EulCauInk 是一款以 **Markdown（`.md`）** 为核心的本地笔记应用，
 
 Web 前端完整源码位于：
 
-**GitHub 仓库** [EulCau/EulcauInk](https://github.com/EulCau/EulcauInk)
+**GitHub 仓库** [EulCau/EulCauInk](https://github.com/EulCau/EulCauInk)
+
+可以从其 [release](https://github.com/EulCau/EulcauInk/releases) 中下载构建好的静态资源
 
 该仓库包含：
 
