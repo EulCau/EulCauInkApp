@@ -83,12 +83,9 @@ Web 前端完整源码位于：
 
 ## License
 
-待定
+This project is licensed under the MIT License.
 
-## 致谢
+## Acknowledgements
 
-- Markdown / React / Tailwind 社区
-- chatGPT 与 aistudio 辅助开发
-- Android WebView 开源生态
-
-如果你在使用过程中发现问题或有改进建议，欢迎交流与反馈。
+- Open-source communities including React, Tailwind CSS, CodeMirror, and Android WebView
+- AI-assisted development with ChatGPT and AI Studio
