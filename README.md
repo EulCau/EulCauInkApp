@@ -1,85 +1,100 @@
 # EulCauInk
 
-EulCauInk 是一款以 **Markdown（`.md`）** 为核心的本地笔记应用，强调 **结构化写作、轻量编辑与离线可用**。  
-应用基于 Web 技术构建，并通过 Android WebView 封装为原生应用。
+EulCauInk is a **local-first note-taking application** centered around **Markdown (`.md`)**, with a strong focus on **structured writing, lightweight editing, and full offline availability**.  
+The app is built using Web technologies and packaged as a native Android application via Android WebView.
 
-## 功能特性
+## Features
 
-- 本地 Markdown 笔记管理
-- 即开即写，所见即所得的 Markdown 编辑体验
-- 支持笔记拖拽排序
-- 支持删除笔记
-- 支持在 Markdown 中绘图与插入图片
-- 支持多种超链接类型
-- Android 原生应用封装，离线可用
+- Local Markdown note management
+- Instant editing with a WYSIWYG-like Markdown experience
+- Drag-and-drop note reordering
+- Note deletion support
+- Drawing and image insertion within Markdown
+- Support for multiple hyperlink types
+- Native Android app packaging with offline support
 
-## App 使用方法
+### Update Plan
 
-### 1️. 创建与编辑笔记
+- [x] Upload and export Markdown files (v1.0.1)
+- [x] Fix image rendering issues (v1.0.1)
+- [x] Upload images within notes (v1.0.1)
+- [x] Save images rended in notes (v1.0.1)
+- [ ] Improve checkbox display
+- [ ] Improve code block rendering
+- [ ] Ctrl + S to save
+- [ ] Silent save (display `*` in the title when there are unsaved changes)
+- [ ] More drawing features
+- [ ] Code hints and auto-completion
+- [ ] AI integration
 
-- 打开应用后，可以 **新建 Markdown (`.md`) 文件**
-- 点击笔记即可进入编辑界面
-- 所有笔记均为本地文件，不依赖云端
+## App Usage Guide
 
-### 2️. 笔记管理
+### 1️. Creating and Editing Notes
 
-- **拖拽排序**  
-  长按笔记即可调整顺序
-- **删除笔记**  
-  可直接删除不再需要的 `.md` 文件
+- After launching the app, you can **create new Markdown (`.md`) files**
+- Tap a note to enter the editor
+- All notes are stored locally and do not rely on cloud services
 
-### 3️. Markdown 内容能力
+### 2️. Note Management
 
-在 Markdown 文档中，你可以：
+- **Drag-and-drop reordering**  
+  Long-press a note to adjust its position
+- **Delete notes**  
+  Unneeded `.md` files can be removed directly
 
-- 正常书写 Markdown 语法
-- 上传 / 下载 Markdown 文件
-- 绘图 / 插入图片
-- 插入超链接
+### 3️. Markdown Capabilities
 
-#### 支持的链接类型
+Within a Markdown document, you can:
 
-| 链接类型 | 是否支持 | 说明 |
-| ------ | ------ | ------ |
-| `http://` / `https://` | ✅ | 外部网页链接 |
-| `#标题` | ✅ | 当前文档内部标题跳转 |
-| `xxx.md` | ✅ | 跳转到其他 Markdown 文档 |
-| `mailto:` | ✅ | 邮件链接 |
-| `tel:` | ✅ | 电话链接 |
-| `file://` | ❌ | 出于安全限制不支持 |
+- Write standard Markdown syntax
+- Upload / download Markdown files
+- Draw or insert images
+- Insert hyperlinks
 
-> **注意**：  
-> 出于 Android WebView 的安全模型限制，`file://` 协议无法使用，请使用上述支持的链接形式。
+#### Supported Link Types
 
-## 技术架构概览
+| Link Type | Supported | Description |
+| --------- | --------- | ----------- |
+| `http://` / `https://` | ✅ | External web links |
+| `#heading` | ✅ | Jump to headings within the current document |
+| `xxx.md` | ✅ | Navigate to another Markdown document |
+| `mailto:` | ✅ | Email links |
+| `tel:` | ✅ | Telephone links |
+| `file://` | ❌ | Not supported due to security restrictions |
 
-- **前端**：Vite + React + Tailwind CSS
-- **Markdown 渲染**：`react-markdown` + `remark` / `rehype`
-- **平台**：Android WebView
-- **构建方式**：Vite build + 本地静态资源加载
+> **Note**:  
+> Due to Android WebView security constraints, the `file://` protocol is not available. Please use one of the supported link formats above.
 
-## Web 源代码
+## Technical Architecture Overview
 
-Web 前端完整源码位于：
+- **Frontend**: Vite + React + Tailwind CSS
+- **Markdown Rendering**: `react-markdown` with `remark` / `rehype`
+- **Platform**: Android WebView
+- **Build Pipeline**: Vite build + local static asset loading
 
-**GitHub 仓库** [EulCau/EulCauInk](https://github.com/EulCau/EulCauInk)
+## Web Source Code
 
-可以从其 [release](https://github.com/EulCau/EulcauInk/releases) 中下载构建好的静态资源
+The complete web frontend source code is available at:
 
-该仓库包含：
+**GitHub Repository**: [EulCau/EulCauInk](https://github.com/EulCau/EulCauInk)
 
-- 前端源码
-- Vite 构建配置
-- Markdown 编辑与渲染逻辑
-- 静态网页构建方法与封装说明
+Prebuilt static assets can be downloaded from the  
+[Releases page](https://github.com/EulCau/EulcauInk/releases)
 
-## 已知限制与注意事项
+This repository includes:
 
-- 本应用 **不适合作为在线网页部署**
-- WebView 环境下：
-  - CDN 资源需确保可访问
-  - `file://` 链接受限
-- release 模式下 WebView 行为比 debug 更严格，需注意资源路径与权限
+- Frontend source code
+- Vite build configuration
+- Markdown editing and rendering logic
+- Static site build and packaging instructions
+
+## Known Limitations and Notes
+
+- This application is **not intended for deployment as a public web service**
+- In the WebView environment:
+  - CDN resources must be accessible
+  - `file://` links are restricted
+- WebView behavior in release mode is stricter than in debug mode; pay close attention to resource paths and permissions
 
 ## License
 
