@@ -13,7 +13,7 @@ The app is built using Web technologies and packaged as a native Android applica
 - Support for multiple hyperlink types
 - Native Android app packaging with offline support
 
-### Update Plan
+## Update Plan
 
 - [x] Upload and export Markdown files (v1.0.1)
 - [x] Fix image rendering issues (v1.0.1)
