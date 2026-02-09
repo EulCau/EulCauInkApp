@@ -4,10 +4,10 @@
 
 This is the first version of the application, which includes the following core features:
 
-1. Create and delete .md files
-2. .md rendering
-3. Drawing and inserting images into .md files
-4. Hyperlink functionality
+1. feat: create and delete .md files
+2. feat: .md rendering
+3. feat: drawing and inserting images into .md files
+4. feat: hyperlink functionality
 
 ## v1.0.1
 
@@ -22,3 +22,14 @@ In android:
 
 1. feat: allow saving rendered images
 2. build: updated and streamlined dependencies and library versions
+
+## v1.0.2
+
+Fix some bugs, add new features and optimize the display:
+
+In web:
+
+1. fix: checkboxes render both bullet point and checkbox
+2. feat: add interactive checkboxes for task lists in Markdown editor
+3. display: enhance code styling in Markdown editor
+4. display: improve block quote rendering

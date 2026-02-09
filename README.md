@@ -18,14 +18,15 @@ The app is built using Web technologies and packaged as a native Android applica
 - [x] Upload and export Markdown files (v1.0.1)
 - [x] Fix image rendering issues (v1.0.1)
 - [x] Upload images within notes (v1.0.1)
-- [x] Save images rended in notes (v1.0.1)
-- [ ] Improve checkbox display
-- [ ] Improve code block rendering
+- [x] Save images rendered in notes (v1.0.1)
+- [x] Improve checkbox display (v1.0.2)
+- [x] Improve code block rendering (v1.0.2)
+- [x] Improve block quote rendering (v1.0.2)
 - [ ] Ctrl + S to save
 - [ ] Silent save (display `*` in the title when there are unsaved changes)
 - [ ] More drawing features
 - [ ] Code hints and auto-completion
-- [ ] AI integration
+- [ ] Other features
 
 ## App Usage Guide
 
@@ -53,14 +54,14 @@ Within a Markdown document, you can:
 
 #### Supported Link Types
 
-| Link Type | Supported | Description |
-| --------- | --------- | ----------- |
-| `http://` / `https://` | ✅ | External web links |
-| `#heading` | ✅ | Jump to headings within the current document |
-| `xxx.md` | ✅ | Navigate to another Markdown document |
-| `mailto:` | ✅ | Email links |
-| `tel:` | ✅ | Telephone links |
-| `file://` | ❌ | Not supported due to security restrictions |
+| Link Type              | Supported | Description                                  |
+|------------------------|-----------|----------------------------------------------|
+| `http://` / `https://` | &check;   | External web links                           |
+| `#heading`             | &check;   | Jump to headings within the current document |
+| `xxx.md`               | &check;   | Navigate to another Markdown document        |
+| `mailto:`              | &check;   | Email links                                  |
+| `tel:`                 | &check;   | Telephone links                              |
+| `file://`              | &cross;   | Not supported due to security restrictions   |
 
 > **Note**:  
 > Due to Android WebView security constraints, the `file://` protocol is not available. Please use one of the supported link formats above.
